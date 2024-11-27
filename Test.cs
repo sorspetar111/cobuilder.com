@@ -14,7 +14,25 @@ var losers = new List<string> {
 
 // Solution 1 by item
 
+for (int i = winners.Count - 1; i >= 0; i--)
+{
+    if (!winners[i].Contains('a'))
+    {
+        losers.Add(winners[i]);
+        winners.RemoveAt(i);
+        i--;
+    }
+}
 
+for (int i = losers.Count - 1; i >= 0; i--)
+{
+    if (losers[i].Contains('a'))
+    {
+        winners.Add(losers[i]);
+        losers.RemoveAt(i);
+        i--;
+    }
+}
 
 
 // Solution 2 LinQ
