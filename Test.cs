@@ -37,8 +37,8 @@ for (int i = 0; i<= losers.Count - 1;  i++)
 // Solution 2 LinQ
 
 
-winners.AddRange(losers.Where(l=>l.Contains('a'));
-losers.AddRange(winners.Where(l=>!l.Contains('a')):
+winners.AddRange(losers.Where(l=>l.ToLower().Contains('a'));
+losers.AddRange(winners.Where(l=>!l.ToLower().Contains('a')):
 
 winners = winners.RemoveAll(item => !winners.ToLower().Contains('a'));
 losers = losers.RemoveAll(item => losers.ToLower().Contains('a'));
