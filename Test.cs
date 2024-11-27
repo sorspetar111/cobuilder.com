@@ -13,10 +13,9 @@ var losers = new List<string> {
 
 
 // Solution 1 by item
-
-for (int i = winners.Count - 1; i >= 0; i--)
+for (int i = 0; i <= winners.Count - 1; i++)
 {
-    if (!winners[i].Contains('a'))
+    if (!winners[i].ToLower().Contains('a'))
     {
         losers.Add(winners[i]);
         winners.RemoveAt(i);
@@ -24,9 +23,9 @@ for (int i = winners.Count - 1; i >= 0; i--)
     }
 }
 
-for (int i = losers.Count - 1; i >= 0; i--)
+for (int i = 0; i<= losers.Count - 1;  i++)
 {
-    if (losers[i].Contains('a'))
+    if (losers[i].ToLower().Contains('a'))
     {
         winners.Add(losers[i]);
         losers.RemoveAt(i);
@@ -41,10 +40,11 @@ for (int i = losers.Count - 1; i >= 0; i--)
 winners.AddRange(losers.Where(l=>l.Contains('a'));
 losers.AddRange(winners.Where(l=>!l.Contains('a')):
 
-winners = winners.RemoveAll(item => !winners.Contains('a'));
-losers = losers.RemoveAll(item => losers.Contains('a'));
+winners = winners.RemoveAll(item => !winners.ToLower().Contains('a'));
+losers = losers.RemoveAll(item => losers.ToLower().Contains('a'));
                 
 // Output 
 Console.WriteLine("Winners after removal and addition: " + string.Join(", ", winners));
 Console.WriteLine("Lossers after removal and addition: " + string.Join(", ", lossers));
                 
+
